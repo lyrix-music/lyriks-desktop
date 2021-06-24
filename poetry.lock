@@ -1,0 +1,136 @@
+[[package]]
+name = "certifi"
+version = "2021.5.30"
+description = "Python package for providing Mozilla's CA Bundle."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "chardet"
+version = "4.0.0"
+description = "Universal encoding detector for Python 2 and 3"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "dbus-python"
+version = "1.2.16"
+description = "Python bindings for libdbus"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "idna"
+version = "2.10"
+description = "Internationalized Domain Names in Applications (IDNA)"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
+name = "lyrix-api"
+version = "0.1.0"
+description = "Python bindings for Lyrix backend"
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[package.dependencies]
+requests = ">=2.25.1,<3.0.0"
+
+[[package]]
+name = "pyside6"
+version = "6.1.1"
+description = "Python bindings for the Qt cross-platform application and UI framework"
+category = "main"
+optional = false
+python-versions = ">=3.6, <3.10"
+
+[package.dependencies]
+shiboken6 = "6.1.1"
+
+[[package]]
+name = "requests"
+version = "2.25.1"
+description = "Python HTTP for Humans."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[package.dependencies]
+certifi = ">=2017.4.17"
+chardet = ">=3.0.2,<5"
+idna = ">=2.5,<3"
+urllib3 = ">=1.21.1,<1.27"
+
+[package.extras]
+security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)"]
+socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
+
+[[package]]
+name = "shiboken6"
+version = "6.1.1"
+description = "Python / C++ bindings helper module"
+category = "main"
+optional = false
+python-versions = ">=3.6, <3.10"
+
+[[package]]
+name = "urllib3"
+version = "1.26.5"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
+
+[package.extras]
+brotli = ["brotlipy (>=0.6.0)"]
+secure = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "certifi", "ipaddress"]
+socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
+
+[metadata]
+lock-version = "1.1"
+python-versions = ">=3.6, <3.10"
+content-hash = "64617de56c5dcc7ea976981e43386edf1b186a8dabd0799680b001625e5bcb96"
+
+[metadata.files]
+certifi = [
+    {file = "certifi-2021.5.30-py2.py3-none-any.whl", hash = "sha256:50b1e4f8446b06f41be7dd6338db18e0990601dce795c2b1686458aa7e8fa7d8"},
+    {file = "certifi-2021.5.30.tar.gz", hash = "sha256:2bbf76fd432960138b3ef6dda3dde0544f27cbf8546c458e60baf371917ba9ee"},
+]
+chardet = [
+    {file = "chardet-4.0.0-py2.py3-none-any.whl", hash = "sha256:f864054d66fd9118f2e67044ac8981a54775ec5b67aed0441892edb553d21da5"},
+    {file = "chardet-4.0.0.tar.gz", hash = "sha256:0d6f53a15db4120f2b08c94f11e7d93d2c911ee118b6b30a04ec3ee8310179fa"},
+]
+dbus-python = [
+    {file = "dbus-python-1.2.16.tar.gz", hash = "sha256:11238f1d86c995d8aed2e22f04a1e3779f0d70e587caffeab4857f3c662ed5a4"},
+]
+idna = [
+    {file = "idna-2.10-py2.py3-none-any.whl", hash = "sha256:b97d804b1e9b523befed77c48dacec60e6dcb0b5391d57af6a65a312a90648c0"},
+    {file = "idna-2.10.tar.gz", hash = "sha256:b307872f855b18632ce0c21c5e45be78c0ea7ae4c15c828c20788b26921eb3f6"},
+]
+lyrix-api = [
+    {file = "lyrix-api-0.1.0.tar.gz", hash = "sha256:1588afc758529c2f8ac2e92ef7caa16fab49efa54e0579116ec164a2514c158a"},
+    {file = "lyrix_api-0.1.0-py3-none-any.whl", hash = "sha256:40f25bd57b62695a49903996580a54678ad92d2239798d7031d8a8b8ed4fe36e"},
+]
+pyside6 = [
+    {file = "PySide6-6.1.1-6.1.1-cp36.cp37.cp38.cp39-abi3-macosx_10_14_x86_64.whl", hash = "sha256:a530a7e1c7007fddd8210dcdbf7e6dada8387c73b3c3a209bd618422cee59266"},
+    {file = "PySide6-6.1.1-6.1.1-cp36.cp37.cp38.cp39-abi3-manylinux1_x86_64.whl", hash = "sha256:f5c8a46e34226a756b620a1c1ab92641973870d60b5accb668216c9aac50044d"},
+    {file = "PySide6-6.1.1-6.1.1-cp36.cp37.cp38.cp39-none-win_amd64.whl", hash = "sha256:9d870456b6d75567c9837855557fef590cd12dadc9b0b227d2c5a640c973fa8a"},
+]
+requests = [
+    {file = "requests-2.25.1-py2.py3-none-any.whl", hash = "sha256:c210084e36a42ae6b9219e00e48287def368a26d03a048ddad7bfee44f75871e"},
+    {file = "requests-2.25.1.tar.gz", hash = "sha256:27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804"},
+]
+shiboken6 = [
+    {file = "shiboken6-6.1.1-6.1.1-cp36.cp37.cp38.cp39-abi3-macosx_10_14_x86_64.whl", hash = "sha256:1d15b1008a21a6176f5022debb5aacd8e77913141a4ac7bf1c08ef9501babb3c"},
+    {file = "shiboken6-6.1.1-6.1.1-cp36.cp37.cp38.cp39-abi3-manylinux1_x86_64.whl", hash = "sha256:2bbaa73e24b6ff8550607d9772d3ea1158f63259e18b05e790fbd29900f90e27"},
+    {file = "shiboken6-6.1.1-6.1.1-cp36.cp37.cp38.cp39-none-win_amd64.whl", hash = "sha256:71511be33bf87480cbabc9d1e08e0e2274546ee9d54b6e796e5d530a09845430"},
+]
+urllib3 = [
+    {file = "urllib3-1.26.5-py2.py3-none-any.whl", hash = "sha256:753a0374df26658f99d826cfe40394a686d05985786d946fbe4165b5148f5a7c"},
+    {file = "urllib3-1.26.5.tar.gz", hash = "sha256:a7acd0977125325f516bda9735fa7142b909a8d01e8b2e4c8108d0984e6e0098"},
+]

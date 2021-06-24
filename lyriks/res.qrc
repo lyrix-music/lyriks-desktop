@@ -1,0 +1,8 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>ui/icons/lyrix.png</file>
+    <file>ui/main.qml</file>
+    <file>ui/LyricsPage.qml</file>
+    <file>ui/LoginPage.qml</file>
+</qresource>
+</RCC>
