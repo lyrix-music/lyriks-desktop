@@ -71,7 +71,7 @@ ging in\x22\x0a       \
      Layout.fill\
 Width: true\x0a    \
     }\x0a\x0a    }\x0a\x0a}\
-\x00\x00\x08<\
+\x00\x00\x09\x8c\
 i\
 mport QtQuick 2.\
 6\x0aimport QtQuick\
@@ -80,72 +80,93 @@ ort QtQuick.Cont\
 rols 2.0\x0aimport \
 org.kde.kirigami\
  2.13 as Kirigam\
-i\x0a\x0aKirigami.Page\
-\x0a{\x0a    id: root\x0a\
-    title: \x22Lyri\
-ks\x22\x0a    \x0a    \x0a  \
-  \x0a    ColumnLay\
-out {\x0a        wi\
-dth: parent.widt\
-h\x0a        height\
-: parent.height\x0a\
-\x0a        RowLayo\
-ut {\x0a           \
- width: parent.w\
-idth\x0a           \
- visible: true\x0a\x0a\
-            Imag\
-e {\x0a            \
-    Layout.prefe\
-rredHeight: trac\
-kInformationColu\
-mn.implicitHeigh\
-t\x0a              \
+i\x0a\x0a\x0a\x0aKirigami.Pa\
+ge\x0a{\x0a    id: roo\
+t\x0a    title: \x22Ly\
+riks\x22\x0a    \x0a    s\
+ignal playerChan\
+ged(string playe\
+rName)\x0a    \x0a    \
+\x0a    ColumnLayou\
+t {\x0a        widt\
+h: parent.width\x0a\
+        height: \
+parent.height\x0a\x0a \
+       RowLayout\
+ {\x0a            w\
+idth: parent.wid\
+th\x0a            v\
+isible: true\x0a\x0a  \
+          Image \
+{\x0a              \
   Layout.preferr\
-edWidth: trackIn\
-formationColumn.\
-implicitHeight\x0a \
-               i\
-d: albumArt\x0a    \
-            \x0a   \
-             sou\
-rce: lyrixAlbumA\
-rt\x0a            }\
-\x0a            Col\
-umnLayout {\x0a    \
-            id: \
-trackInformation\
-Column\x0a         \
-       Kirigami.\
-Heading {\x0a      \
-              le\
-vel: 1\x0a         \
-           id: t\
-rackNameLabel\x0a  \
+edHeight: trackI\
+nformationColumn\
+.implicitHeight\x0a\
                 \
-  text: lyrixTra\
-ck === \x22\x22 ? \x22\xf0\x9f\x8e\
-\xb5\x22 : lyrixTrack\x0a\
+Layout.preferred\
+Width: trackInfo\
+rmationColumn.im\
+plicitHeight\x0a   \
+             id:\
+ albumArt\x0a      \
+          \x0a     \
+           sourc\
+e: lyrixAlbumArt\
+\x0a            }\x0a \
+           Colum\
+nLayout {\x0a      \
+          id: tr\
+ackInformationCo\
+lumn\x0a           \
+     Kirigami.He\
+ading {\x0a        \
+            leve\
+l: 1\x0a           \
+         id: tra\
+ckNameLabel\x0a    \
+                \
+text: lyrixTrack\
+ === \x22\x22 ? \x22\xf0\x9f\x8e\xb5\x22\
+ : lyrixTrack\x0a\x0a \
+               }\
 \x0a               \
- }\x0a             \
-   Label {\x0a     \
-               i\
-d: artistNameLab\
-el\x0a             \
-       text: lyr\
-ixArtist === \x22\x22 \
-? \x22You are curre\
-ntly not listeni\
-ng to any song\x22 \
-: lyrixArtist\x0a  \
-              }\x0a\
+ Label {\x0a       \
+             id:\
+ artistNameLabel\
+\x0a               \
+     text: lyrix\
+Artist === \x22\x22 ? \
+\x22You are current\
+ly not listening\
+ to any song\x22 : \
+lyrixArtist\x0a    \
             }\x0a  \
-      \x0a        }\
-\x0a    \x0a        Ro\
-wLayout {\x0a      \
-  \x0a            /\
-/ visible: user.\
-loggedIn\x0a       \
+          }\x0a    \
+    \x0a        }\x0a\x0a\
+        ComboBox\
+ {\x0a            v\
+isible: true\x0a   \
+         width: \
+parent.width\x0a   \
+         model: \
+availablePlayers\
+\x0a            onC\
+urrentIndexChang\
+ed: {\x0a          \
+      console.wa\
+rn(availablePlay\
+ers[currentIndex\
+])\x0a             \
+   lx.playerChan\
+ged(availablePla\
+yers[currentInde\
+x])\x0a            \
+}\x0a        }\x0a    \
+\x0a        RowLayo\
+ut {\x0a        \x0a  \
+          visibl\
+e: false\x0a       \
      width: pare\
 nt.width\x0a       \
      CheckBox {\x0a\
@@ -205,7 +226,7 @@ ics\x0a            \
 \x0a            \x0a  \
       }*/\x0a      \
  \x0a\x0a    }\x0a\x0a}\
-\x00\x00\x03\x90\
+\x00\x00\x04t\
 i\
 mport QtQuick 2.\
 6\x0a\x0aimport QtQuic\
@@ -227,43 +248,58 @@ ring lyrixArtist\
 : \x22\x22\x0a    propert\
 y string lyrixAl\
 bumArt: \x22\x22\x0a    p\
-roperty variant \
-user\x0a    \x0a    \x0a \
-   property QtOb\
-ject lx\x0a    prop\
-erty QtObject ly\
-ricsFetcher\x0a\x0a   \
- Connections {\x0a \
-       target: l\
-x\x0a\x0a        funct\
-ion onSongUpdate\
-d(track, artist,\
- albumArt) {\x0a   \
-         lyrixTr\
-ack = track;\x0a   \
-         lyrixAr\
-tist = artist;\x0a \
-           lyrix\
-AlbumArt = album\
-Art;\x0a           \
- lyrixLyrics = `\
-Loading lyrics f\
-or ${track} by $\
-{artist}...`\x0a   \
-     }\x0a    }\x0a\x0a  \
-  Connections {\x0a\
-        target: \
-lyricsFetcher\x0a\x0a \
-       function \
-onLyricsUpdated(\
-msg) {\x0a         \
-   lyrixLyrics =\
- msg;\x0a        }\x0a\
-\x0a    }\x0a    \x0a\x0a   \
- pageStack.initi\
-alPage: Qt.resol\
-vedUrl(\x22LyricsPa\
-ge.qml\x22)\x0a    \x0a}\
+roperty var avai\
+lablePlayers: []\
+\x0a    property va\
+riant user\x0a    \x0a\
+    \x0a    propert\
+y QtObject lx\x0a  \
+  property QtObj\
+ect lyricsFetche\
+r\x0a\x0a    Connectio\
+ns {\x0a        tar\
+get: lx\x0a\x0a       \
+ function onSong\
+Updated(track, a\
+rtist, albumArt)\
+ {\x0a            l\
+yrixTrack = trac\
+k;\x0a            l\
+yrixArtist = art\
+ist;\x0a           \
+ lyrixAlbumArt =\
+ albumArt;\x0a     \
+       if (lyrix\
+Track == \x22\x22 || l\
+yrixArtist == \x22\x22\
+) {\x0a            \
+    return\x0a     \
+       }\x0a       \
+     lyrixLyrics\
+ = `Loading lyri\
+cs for ${track} \
+by ${artist}...`\
+\x0a        }\x0a\x0a    \
+    function onP\
+layersUpdated(pl\
+ayers) {\x0a       \
+     availablePl\
+ayers = players\x0a\
+        }\x0a\x0a    }\
+\x0a\x0a    Connection\
+s {\x0a        targ\
+et: lyricsFetche\
+r\x0a\x0a        funct\
+ion onLyricsUpda\
+ted(msg) {\x0a     \
+       lyrixLyri\
+cs = msg;\x0a      \
+  }\x0a\x0a    }\x0a    \x0a\
+\x0a    pageStack.i\
+nitialPage: Qt.r\
+esolvedUrl(\x22Lyri\
+csPage.qml\x22)\x0a   \
+ \x0a}\
 \x00\x00^]\
 \x89\
 PNG\x0d\x0a\x1a\x0a\x00\x00\x00\x0dIHDR\x00\
@@ -1815,24 +1851,17 @@ qt_resource_struct = b"\
 \x00\x00\x00\x1a\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\
 \x00\x00\x01z9\x14\xf8i\
 \x00\x00\x00:\x00\x00\x00\x00\x00\x01\x00\x00\x03\xf4\
-\x00\x00\x01z9\x8bm\xe9\
-\x00\x00\x00\x5c\x00\x00\x00\x00\x00\x01\x00\x00\x0c4\
-\x00\x00\x01z9\x8b\x08p\
-\x00\x00\x00r\x00\x00\x00\x00\x00\x01\x00\x00\x0f\xc8\
+\x00\x00\x01z=\xb6?\xae\
+\x00\x00\x00\x5c\x00\x00\x00\x00\x00\x01\x00\x00\x0d\x84\
+\x00\x00\x01z=\x94W(\
+\x00\x00\x00r\x00\x00\x00\x00\x00\x01\x00\x00\x11\xfc\
 \x00\x00\x01z9\x82\xff\xa6\
 "
 
-
 def qInitResources():
-    QtCore.qRegisterResourceData(
-        0x03, qt_resource_struct, qt_resource_name, qt_resource_data
-    )
-
+    QtCore.qRegisterResourceData(0x03, qt_resource_struct, qt_resource_name, qt_resource_data)
 
 def qCleanupResources():
-    QtCore.qUnregisterResourceData(
-        0x03, qt_resource_struct, qt_resource_name, qt_resource_data
-    )
-
+    QtCore.qUnregisterResourceData(0x03, qt_resource_struct, qt_resource_name, qt_resource_data)
 
 qInitResources()

@@ -13,6 +13,7 @@ Kirigami.ApplicationWindow
     property string lyrixTrack: ""
     property string lyrixArtist: ""
     property string lyrixAlbumArt: ""
+    property var availablePlayers: []
     property variant user
     
     
@@ -26,8 +27,16 @@ Kirigami.ApplicationWindow
             lyrixTrack = track;
             lyrixArtist = artist;
             lyrixAlbumArt = albumArt;
+            if (lyrixTrack == "" || lyrixArtist == "") {
+                return
+            }
             lyrixLyrics = `Loading lyrics for ${track} by ${artist}...`
         }
+
+        function onPlayersUpdated(players) {
+            availablePlayers = players
+        }
+
     }
 
     Connections {

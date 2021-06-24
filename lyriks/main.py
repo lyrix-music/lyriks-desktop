@@ -20,7 +20,6 @@ def main():
 
     engine = QQmlApplicationEngine()
     # ctx = engine.rootContext()
-
     # ctx.setContextProperty("lx", lx)
 
     engine.load(":/ui/main.qml")

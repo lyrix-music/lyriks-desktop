@@ -10,6 +10,7 @@ Kirigami.Page
     id: root
     title: "Lyriks"
     
+    signal playerChanged(string playerName)
     
     
     ColumnLayout {
@@ -19,14 +20,6 @@ Kirigami.Page
         RowLayout {
             width: parent.width
             visible: true
-
-            Image {
-                Layout.preferredHeight: trackInformationColumn.implicitHeight
-                Layout.preferredWidth: trackInformationColumn.implicitHeight
-                id: albumArt
-                
-                source: lyrixAlbumArt
-            }
 
             Image {
                 Layout.preferredHeight: trackInformationColumn.implicitHeight
@@ -50,10 +43,20 @@ Kirigami.Page
             }
         
         }
+
+        ComboBox {
+            visible: true
+            width: parent.width
+            model: availablePlayers
+            onCurrentIndexChanged: {
+                console.warn(availablePlayers[currentIndex])
+                lx.playerChanged(availablePlayers[currentIndex])
+            }
+        }
     
         RowLayout {
         
-            // visible: user.loggedIn
+            visible: false
             width: parent.width
             CheckBox {
                 id: scrobbleCheckBox
