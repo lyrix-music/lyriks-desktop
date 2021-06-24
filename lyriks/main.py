@@ -20,12 +20,12 @@ def main():
 
     engine = QQmlApplicationEngine()
     # ctx = engine.rootContext()
-    
+
     # ctx.setContextProperty("lx", lx)
 
-    engine.load(':/ui/main.qml')
-    engine.rootObjects()[0].setProperty('lyricsFetcher', lyrics_fetcher)
-    engine.rootObjects()[0].setProperty('lx', lx)
+    engine.load(":/ui/main.qml")
+    engine.rootObjects()[0].setProperty("lyricsFetcher", lyrics_fetcher)
+    engine.rootObjects()[0].setProperty("lx", lx)
 
     if not engine.rootObjects():
         sys.exit(-1)
@@ -34,4 +34,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()    
+    main()
